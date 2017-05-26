@@ -1,6 +1,6 @@
 # SplitBuilder
 
-Keep your Routes, Controllers and Models thin.
+Use alongside [Split gem](https://rubygems.org/gems/split). SplitBuilder is a nice DSL to define your experiments.
 
 ## Installation
 
