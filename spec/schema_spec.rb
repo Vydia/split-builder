@@ -30,9 +30,10 @@ describe SplitBuilder::Schema do
 
       experiment :purchase_button_color do
         metric :any_purchase
-        alternative "green", :percent => 5
-        alternative "blue", :percent => 3
-        alternative "red", :percent => 1
+        # Use Symbols to prove they get converted to Strings.
+        alternative :green, :percent => 5
+        alternative :blue, :percent => 3
+        alternative :red, :percent => 1
       end
 
       experiment :profile_version do
@@ -51,8 +52,8 @@ describe SplitBuilder::Schema do
         :metric => :sign_in,
         :goals => ["sign_up", "sign_in"],
         :alternatives => [
-          { :name => "Get Started Today!", :percent => 75 },
-          { :name => "Sign Up", :percent => 25 }
+          { "Get Started Today!" => 75 },
+          { "Sign Up" => 25 }
         ],
         :resettable => false
       },
@@ -60,9 +61,9 @@ describe SplitBuilder::Schema do
         :metric => :any_purchase,
         :goals => ["one_time_purchase", "subscription_purchase"],
         :alternatives => [
-          { :name => "green", :percent => 5 },
-          { :name => "blue", :percent => 3 },
-          { :name => "red", :percent => 1 }
+          { "green" => 5 },
+          { "blue" => 3 },
+          { "red" => 1 }
         ],
         :resettable => false
       },
@@ -70,9 +71,9 @@ describe SplitBuilder::Schema do
         :metric => :enter_profile_information,
         :goals => ["enter_profile_information"],
         :alternatives => [
-          { :name => "none", :percent => 50 },
-          { :name => "simple", :percent => 50 },
-          { :name => "advanced", :percent => 50 }
+          { "none" => 50 },
+          { "simple" => 50 },
+          { "advanced" => 50 }
         ],
         :resettable => false
       }

@@ -31,8 +31,7 @@ module SplitBuilder
   def dump_alternatives(alternatives)
     alternatives.map do |options|
       {
-        :name => options.fetch(:name).to_s,
-        :percent => options.fetch(:percent, 50)
+        options.fetch(:name).to_s => options.fetch(:percent, 50),
       }
     end
   end
